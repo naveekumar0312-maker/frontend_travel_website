@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Bookings</title>
+<style>
+  :root{--primary:#0f6ef0;--bg:#f6f9ff}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0b1220}
+  .top{height:64px;background:linear-gradient(90deg,var(--primary),#1c8bff);color:#fff;display:flex;align-items:center;padding:0 20px}
+  .brand{font-weight:800}
+  .top .right{margin-left:auto;display:flex;gap:10px;align-items:center}
+  .container{max-width:1000px;margin:20px auto;padding:0 18px}
+  .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 10px 28px rgba(12,30,80,0.06)}
+  table{width:100%;border-collapse:collapse;margin-top:10px}
+  th,td{padding:10px;border-bottom:1px solid #eef6ff;text-align:left}
+  .btn{padding:8px 10px;border-radius:8px;border:none;color:#fff;background:#059669;cursor:pointer}
+  .del{background:#e11d48}
+  .badge{background:#fff1f0;color:#b30000;padding:4px 8px;border-radius:6px;font-weight:700}
+  .small{color:#6b7280;font-size:13px}
+@media (max-width: 900px) {
+  .container {
+    padding: 0 10px;
+    margin: 15px auto;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .top {
+    padding: 0 14px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .top {
+    height: 60px;
+    padding: 0 14px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .top .right {
+    gap: 6px;
+  }
+
+  .btn, .del {
+    padding: 7px 8px;
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 7px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .top {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 14px;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .top .right {
+    margin-left: 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .btn, .del {
+    width: 100%;
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+  }
+
+  td, th {
+    font-size: 12px;
+  }
+
+  .badge {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+}  
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">Travel Admin</div>
+    <div class="right">
+      <div class="small">Signed in</div>
+      <button onclick="logout()" style="background:#e53e3e;color:#fff;padding:8px 10px;border-radius:8px;border:none;cursor:pointer">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2 style="margin:0 0 8px 0">Bookings <span id="newCount" class="small"></span></h2>
+      <div id="list">Loading…</div>
+    </div>
+  </div>
+
+<script>
+
+if(localStorage.getItem('admin_login') !== 'yes'){
+
+  window.location.href = 'admin-login.html';
+}
+
+function logout(){
+  localStorage.removeItem('admin_login');
+  window.location.href = 'admin-login.html';
+}
+
+
+function renderBookings(){
+  const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+  const list = document.getElementById('list');
+
+  if(bookings.length === 0){
+    list.innerHTML = '<p class="small">No bookings yet.</p>';
+    updateBadge(0);
+    return;
+  }
+
+  let html = '<table><thead><tr><th>When</th><th>Customer</th><th>Trip</th><th>Passengers</th><th>Actions</th></tr></thead><tbody>';
+  bookings.forEach((b, i) => {
+    html += `<tr>
+      <td>${new Date(b.createdAt).toLocaleString()}<br><small class="small">${b.id || ''}</small></td>
+      <td><b>${escapeHtml(b.name)}</b><br><small class="small">${escapeHtml(b.phone)}</small></td>
+      <td>${escapeHtml(b.from)} → ${escapeHtml(b.to)}<br><small class="small">${escapeHtml(b.date)}</small></td>
+      <td>${escapeHtml(b.passengers)}</td>
+      <td>
+        ${b.status === 'new' ? '<div class="badge">NEW</div><br>' : ''}
+        <button class="btn" onclick="markSeen(${i})">Mark Seen</button>
+        <button class="btn del" onclick="deleteBooking(${i})" style="margin-top:6px">Delete</button>
+      </td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  list.innerHTML = html;
+
+  const newCount = bookings.filter(b => b.status === 'new').length;
+  updateBadge(newCount);
+}
+
+function updateBadge(n){
+  const el = document.getElementById('newCount');
+  el.textContent = n ? `(${n} new)` : '';
+}
+
+function markSeen(i){
+  const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+  if(!bookings[i]) return;
+  bookings[i].status = 'seen';
+  localStorage.setItem('bookings', JSON.stringify(bookings));
+  renderBookings();
+}
+
+function deleteBooking(i){
+  const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+  if(!bookings[i]) return;
+  if(!confirm('Delete this booking?')) return;
+  bookings.splice(i,1);
+  localStorage.setItem('bookings', JSON.stringify(bookings));
+  renderBookings();
+}
+
+function escapeHtml(s){
+  if(s===undefined || s===null) return '';
+  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+}
+
+
+window.addEventListener('storage', (e) => {
+  if(e.key === 'bookings'){
+  
+    renderBookings();
+    
+  }
+});
+
+
+renderBookings();
+</script>
+</body>
+</html>

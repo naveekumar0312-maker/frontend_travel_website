@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navee Travel Timeline – Premium Version</title>
+
+<style>
+
+/* ==========================================================
+   ULTRA PRO MAX PREMIUM UI – FIXED VERSION
+   ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at 20% 20%, #ffffff 0%, #f2f2f2 25%, #e5e5e5 50%, #d6d6d6 75%),
+                linear-gradient(145deg, #ececec, #ffffff, #d4d4d4);
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+.welcome-header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(18px) saturate(180%);
+    font-size: 32px;
+    font-weight: 900;
+    color: #1f1f1f;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+}
+
+/* TIMELINE GRID */
+.timeline {
+    display: grid;
+    grid-template-columns: 1fr 14px 1fr;
+    gap: 55px;
+    padding: 80px 110px;
+}
+
+/* CENTER LINE */
+.timeline-line {
+    width: 4px;
+    background: linear-gradient(180deg, #c8c8c8, #efefef, #c8c8c8);
+    border-radius: 15px;
+    position: relative;
+}
+
+.timeline-line .dot {
+    width: 18px;
+    height: 18px;
+    background: #7a3cff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    box-shadow: 
+        0 0 20px #7a3cff,
+        0 0 35px rgba(122,60,255,0.6),
+        inset 0 0 12px rgba(255,255,255,0.9);
+}
+
+/* TIMELINE BOX STYLE */
+.timeline-box {
+    min-width: 420px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(22px);
+    padding: 32px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.15),
+        inset 0 0 20px rgba(255,255,255,0.25);
+    transition: 0.45s ease;
+}
+
+.timeline-box:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow:
+        0 26px 60px rgba(0,0,0,0.22),
+        inset 0 0 40px rgba(255,255,255,0.35);
+}
+
+/* TEXT */
+.timeline-box h3 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 6px;
+    color: #2b2b2b;
+}
+
+.timeline-box h4 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #7a3cff;
+}
+
+.timeline-box ul {
+    padding-left: 20px;
+}
+
+.timeline-box ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #444;
+}
+
+/* LEFT & RIGHT FIXED POSITIONS */
+.timeline-box.left { grid-column: 1; }
+.timeline-box.right { grid-column: 3; }
+.timeline-line { grid-column: 2; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .timeline {
+        grid-template-columns: 1fr;
+        padding: 30px 25px;
+        gap: 30px;
+    }
+
+    .timeline-line {
+        display: none;
+    }
+
+    .timeline-box {
+        min-width: 100%;
+        grid-column: 1 !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="welcome-header">Welcome to Navee Travel Website</header>
+
+<div class="timeline">
+
+<!-- DAY 1 -->
+<div class="timeline-box left">
+    <h3>Day 1</h3>
+    <h4>Cochin to Alleppey Houseboat</h4>
+    <ul>
+        <li>Drive to Alleppey and check-in to Houseboat at 12 Noon.</li>
+        <li>Lunch break and evening cruise till 5:30 PM.</li>
+        <li>Boat anchored overnight.</li>
+        <li>Morning cruise for 1 hour before checkout.</li>
+        <li>Welcome drink, tea, snacks, lunch, dinner provided.</li>
+    </ul>
+</div>
+
+<div class="timeline-line"><span class="dot"></span></div>
+
+<!-- DAY 2 -->
+<div class="timeline-box right">
+    <h3>Day 2</h3>
+    <h4>Alleppey to Munnar</h4>
+    <ul>
+        <li>5-hour drive to Munnar.</li>
+        <li>Start early if only one-night stay.</li>
+        <li>Optional: Visit Alleppey beach before leaving.</li>
+    </ul>
+</div>
+
+<!-- DAY 3 -->
+<div class="timeline-box left">
+    <h3>Day 3</h3>
+    <h4>Munnar</h4>
+    <ul>
+        <li>Visit Eravikulam National Park.</li>
+        <li>Tea Museum, Echo Point, Kundala Lake.</li>
+        <li>Tea Museum closed on Mondays.</li>
+    </ul>
+</div>
+
+<div class="timeline-line"><span class="dot"></span></div>
+
+<!-- DAY 4 -->
+<div class="timeline-box right">
+    <h3>Day 4</h3>
+    <h4>Munnar to Cochin Drop</h4>
+    <ul>
+        <li>Complimentary sightseeing.</li>
+        <li>Shopping at Cochin.</li>
+        <li>Airport/Railway station drop.</li>
+    </ul>
+</div>
+
+<!-- DAY 5 -->
+<div class="timeline-box left">
+    <h3>Day 5</h3>
+    <h4>Extra Day Activity (Optional)</h4>
+    <ul>
+        <li>Cochin sightseeing.</li>
+        <li>Marine Drive, Fort Kochi, Boat ride.</li>
+        <li>Drop at Airport/Station.</li>
+    </ul>
+</div>
+
+<div class="timeline-line"><span class="dot"></span></div>
+
+<!-- DAY 6 -->
+<div class="timeline-box right">
+    <h3>Day 6</h3>
+    <h4>Extra Day Activity (Optional)</h4>
+    <ul>
+        <li>Shopping at Cochin.</li>
+        <li>City tour and leisure time.</li>
+        <li>Airport/Station drop.</li>
+    </ul>
+</div>
+
+<!-- DAY 7 -->
+<div class="timeline-box left">
+    <h3>Day 7</h3>
+    <h4>Munnar to Cochin Drop</h4>
+    <ul>
+        <li>Complimentary sightseeing.</li>
+        <li>Shopping experience.</li>
+        <li>Final drop at Airport/Station.</li>
+    </ul>
+</div>
+
+<div class="timeline-line"><span class="dot"></span></div>
+
+<!-- DAY 8 -->
+<div class="timeline-box right">
+    <h3>Day 8</h3>
+    <h4>Munnar</h4>
+    <ul>
+        <li>Eravikulam National Park.</li>
+        <li>Echo Point, Tea Museum.</li>
+    </ul>
+</div>
+
+<!-- DAY 9 -->
+<div class="timeline-box left">
+    <h3>Day 9</h3>
+    <h4>Final Checkout</h4>
+    <ul>
+        <li>Checkout and departure.</li>
+        <li>Cochin farewell drop.</li>
+        <li>Trip concludes with sweet memories.</li>
+    </ul>
+</div>
+
+</div>
+
+</body>
+</html>

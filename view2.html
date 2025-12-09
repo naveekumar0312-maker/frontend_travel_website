@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* ==========================================================
+                ULTRA PRO MAX PREMIUM UI
+    Apple Style • Glassmorphism • Neon • Motion UI
+   ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #ececec, #ffffff, #d4d4d4);
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* ---------------- PREMIUM HEADER ---------------- */
+.welcome-header {
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    background: rgba(255,255,255,0.70);
+    backdrop-filter: blur(18px) saturate(180%);
+    font-size: 26px;
+    font-weight: 800;
+    color: #1f1f1f;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.12);
+    animation: fadeDown 0.7s ease forwards;
+}
+
+/* Header Animation */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- PREMIUM TIMELINE GRID ---------------- */
+.timeline {
+    display: grid;
+    grid-template-columns: 1fr 14px 1fr;
+    gap: 60px;
+    padding: 70px 100px;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Premium Vertical Line */
+.timeline-line {
+    background: linear-gradient(180deg, #c6c6c6, #f0f0f0, #c6c6c6);
+    width: 4px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+}
+
+/* Floating Neon Dot */
+.timeline-line .dot {
+    width: 18px;
+    height: 18px;
+    background: #7a3cff;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 
+        0 0 20px #7a3cff,
+        0 0 30px rgba(122,60,255,0.5),
+        inset 0 0 10px rgba(255,255,255,0.8);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.25); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+/* ---------------- PREMIUM TIMELINE CARDS ---------------- */
+.timeline-box {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(20px) saturate(180%);
+    padding: 32px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.15),
+        inset 0 0 25px rgba(255,255,255,0.2);
+    transition: all 0.45s ease;
+    opacity: 0;
+}
+
+/* Left Card Animation */
+.timeline-box:nth-child(odd) {
+    animation: slideLeft 1s ease forwards;
+}
+
+/* Right Card Animation */
+.timeline-box:nth-child(even) {
+    animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(-80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Hover Premium Effects */
+.timeline-box:hover {
+    transform: translateY(-14px) scale(1.05);
+    box-shadow:
+        0 28px 60px rgba(0,0,0,0.22),
+        inset 0 0 40px rgba(255,255,255,0.35);
+    border-color: rgba(122,60,255,0.35);
+}
+
+/* Premium Text */
+.timeline-box h3 {
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #2c2c2c;
+}
+
+.timeline-box h4 {
+    font-size: 19px;
+    margin-bottom: 16px;
+    color: #7a3cff;
+    font-weight: 600;
+}
+
+.timeline-box ul li {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #444;
+    line-height: 1.7;
+}
+
+/* ---------------- PREMIUM HERO BANNER ---------------- */
+.hero-wrapper {
+    width: 100%;
+    max-width: 1350px;
+    margin: auto;
+    padding: 20px;
+}
+
+.banner-box {
+    width: 100%;
+    height: 580px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.25),
+        inset 0 0 50px rgba(255,255,255,0.25);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.banner-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95) contrast(1.05);
+    transition: transform 0.6s ease;
+}
+
+.banner-box:hover img {
+    transform: scale(1.08);
+}
+
+/* ---------------- RESPONSIVE PREMIUM ---------------- */
+
+@media (max-width: 576px) {
+
+  .welcome-header {
+      font-size: 20px;
+  }
+
+  .timeline {
+      grid-template-columns: 1fr;
+      padding: 25px;
+      gap: 25px;
+  }
+
+  .timeline-line {
+      display: none;
+  }
+
+  .timeline-box {
+      text-align: center;
+      padding: 26px;
+  }
+
+  .banner-box {
+      height: 300px;
+      border-radius: 20px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .timeline {
+        padding: 35px 30px;
+    }
+
+    .banner-box {
+        height: 380px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .timeline {
+        padding: 50px 60px;
+    }
+
+    .banner-box {
+        height: 460px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .timeline {
+        padding: 80px 120px;
+    }
+
+    .banner-box {
+        height: 580px;
+    }
+}
+
+
+</style>
+<body>
+
+    <header class="welcome-header">
+    Welcome to Navee Travel Website
+</header>
+<div class="timeline">
+
+   
+    <div class="timeline-box left">
+        <h3>Day 1</h3>
+        <h4>Cochin to Alleppey Houseboat</h4>
+        <ul>
+            <li>Drive to Alleppey and check-in to Houseboat at 12 Noon.</li>
+            <li>Houseboat will be stopped for lunch for 1hrs with the cruise till 5:30 pm.<li>
+            <li>The boat will be anchored till the next morning.</li>
+            <li>1-hour cruise in the morning before check out at 9 am.</li>
+            <li>There are different categories of houseboats available such as Deluxe, Premium, and Luxury, where Deluxe is the basic category.</li>
+            <li>In the houseboat, you will be greeted with a welcome drink, tea, snacks, mineral water, lunch, dinner and breakfast.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-line"><span class="dot"></span></div>
+
+  
+    <div class="timeline-box right">
+        <h3>Day 2</h3>
+        <h4>Alleppey to Munnar</h4>
+        <ul>
+            <li>The drive from Alleppey to Munnar requires a minimum of 5 hours.</li>
+            <li>If you have only one night stay at Munnar, start early from Alleppey so as to reach Munnar at the earliest for sightseeing on the same day.</li>
+            <li>If you have two nights at Munnar, start from Alleppey at your own time after visiting Alleppey Beach.</li>
+            <li>Munnar sightseeing can be done the next day.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-box left">
+        <h3>Day 3</h3>
+        <h4>Munnar</h4>
+        <ul>
+            <li>Suggest starting at 9 am for visiting Eravikulam National park, followed by Tea Museum.</li>
+            <li>Post lunch, visit Mattuppetty dam, Echo point, Kundala Lake, Viewpoints, Pothamedu view point and Botanical Garden.</li>
+            <li>Note: The Eravikulam National Park tickets can be either booked in advance or purchased from the counter.</li>
+            <li>The park is closed from Feb to April due to the breeding time of Nilgiri Tahr.</li>
+            <li>Tea Museum is closed on Mondays.</li>
+        </ul>
+    </div>
+
+     <div class="timeline-line"><span class="dot"></span></div>
+
+    
+    <div class="timeline-box right">
+        <h3>Day 4</h3>
+        <h4>Munnar to Cochin drop</h4>
+        <ul>
+            <li>Munnar to Cochin drop</li>
+            <li>If time available, we provide complimentary Cochin sightseeing which includes fort cochin, the Navy museum, St Francis church, the Chinese fishing net, Santa Cruz basilica, Mattanchery palace, Jewish synagogue, Marine drive, Marine walkway, boating, Tripunitura hill palace.</li>
+            <li>You can find some time for shopping at Cochin.</li>
+            <li>Our representative will leave you at Cochin Airport/Railway station/Bus stand and will extend the necessary support there</li>
+            <li>Drive back to your hometown with the sweet memories of the Kerala trip with Paradise Holidays.</li>
+            <li>Hill palace opens from 9 AM to 5 PM and is closed on Mondays.</li>
+            <li>The Dutch palace is closed on Fridays.</li>
+            <li>The synagogue opens from 10 AM to 1 PM and 3 to 5 PM and is closed on Fridays and Saturdays.</li>
+        </ul>
+    </div>
+
+    
+   <!-- <div class="timeline-box left">
+        <h3>Day 5</h3>
+        <h4>Extra Day Activity (Optional)</h4>
+        <ul>
+            <li>Extra sightseeing or beach visit.</li>
+            <li>Local Kerala food exploration.</li>
+            <li>Sunset point visit.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-line"><span class="dot"></span></div>
+
+    
+    <div class="timeline-box right">
+        <h3>Day 6</h3>
+        <h4>Final Checkout</h4>
+        <ul>
+            <li>Final day checkout.</li>
+            <li>Cochin farewell drop.</li>
+            <li>Trip concludes with amazing memories.</li>
+        </ul>
+    </div> -->
+
+</div>
+
+</body>
+</html>

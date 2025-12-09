@@ -1,0 +1,147 @@
+/* ---------------- FOOTER ---------------- */
+.footer {
+    width: 100%;
+    background: #ffffff;
+    padding: 60px 40px 20px;
+    border-top: 1px solid #ddd;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main layout */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* LEFT SIDE */
+.footer-left {
+    max-width: 300px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ef7f24;
+}
+
+.footer-desc {
+    margin: 15px 0 25px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #222;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* spacing between icons */
+}
+.footer-social a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: black;
+    background: #f2f2f2;
+    padding: 10px 14px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background: black;
+    color: white;
+}
+
+/* RIGHT SIDE COLUMNS */
+.footer-right {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.footer-col a {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: black;
+    margin-left: 4px;
+}
+
+/* Bottom */
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+/* SOCIAL BUTTON STYLE */
+.social-btn {
+    background: #222;
+    width: 42px;
+    height: 42px;
+    display: flex;              /* inline alignment guaranteed */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+  background: #ff7a00;
+  transform: translateY(-3px);
+}
+
+
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+@media (max-width: 850px) {
+    .footer-container {
+        text-align: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-left {
+        margin: auto;
+    }
+
+    .footer-right {
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-col h4 {
+        font-size: 16px;
+    }
+
+    .footer-col a {
+        font-size: 14px;
+    }
+
+    .footer-desc {
+        font-size: 15px;
+    }
+
+    .footer-social a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+}

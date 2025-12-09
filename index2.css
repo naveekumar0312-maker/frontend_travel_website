@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ---- CONTAINER ---- */
+.section {
+    width: 100%;
+    min-height: auto;      
+    padding: 40px 20px;    
+    position: relative;
+    text-align: center;
+}
+
+/* ---- TOP SMALL BUTTON ---- */
+.top-tag {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 6px 16px;
+    border-radius: 22px;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+/* ---- MAIN HEADING ---- */
+.section h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #0c0c0c;
+    margin-bottom: 18px;
+}
+
+/* ---- PARAGRAPH ---- */
+.section p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 17px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ---- CTA BUTTON ---- */
+.cta-btn {
+    background: black;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+    background: #111;
+}
+
+.cta-btn i {
+    font-size: 16px;
+}
+
+/* ---- MOBILE RESPONSIVE ---- */
+@media (max-width: 900px) {
+    .left-img, .right-img {
+        width: 200px;
+        opacity: 0.08;
+    }
+}
+
+@media (max-width: 600px) {
+    .section h1 {
+        font-size: 28px;
+    }
+    .section p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    .left-img, .right-img {
+        display: none; /* hide on mobile */
+    }
+
+    .cta-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}

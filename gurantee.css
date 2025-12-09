@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background:#fdf9f6;
+    overflow-x:hidden;
+}
+
+/* ==============================
+   MAIN GUARANTEE CARD
+   ============================== */
+.guarantee-box{
+    width:90%;
+    max-width:1100px;
+    background:white;
+    margin:40px auto;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.08);
+    display:flex;
+    gap:25px;
+}
+
+.guarantee-box img{
+    width:300px;
+    height:auto;
+    border-radius:10px;
+}
+
+.guarantee-content h2{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.guarantee-content p{
+    font-size:15px;
+    line-height:1.6;
+    color:#444;
+    margin-bottom:10px;
+}
+
+.director-name{
+    font-weight:700;
+    margin-top:15px;
+}
+
+.director-title{
+    font-size:14px;
+    color:#666;
+    margin-bottom:10px;
+}
+
+/* CONTACT ROW */
+.contact-row{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-top:10px;
+}
+
+.contact-row span{
+    font-size:26px;
+    color:#28a745;
+    cursor:pointer;
+}
+
+.contact-row a{
+    color:#0047a5;
+    font-size:14px;
+    text-decoration: underline;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width:950px){
+    .guarantee-box{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+    .guarantee-box img{
+        width:100%;
+        max-width:350px;
+        margin:auto;
+    }
+    .contact-row{
+        justify-content:center;
+    }
+}
+
+@media (max-width:600px){
+    .guarantee-content h2{
+        font-size:22px;
+    }
+    .guarantee-content p{
+        font-size:14px;
+    }
+}
+
+@media (max-width:400px){
+    .guarantee-content p{
+        font-size:13px;
+    }
+}

@@ -1,0 +1,175 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{ overflow-x:hidden; }
+
+/* ---------- HEADER ---------- */
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.15);
+    backdrop-filter:blur(6px);
+    z-index:1000;
+
+    /* Fade-in animation */
+    opacity:0;
+    transform: translateY(-20px);
+    animation: headerFade 1s ease forwards;
+}
+@keyframes headerFade {
+    to { opacity:1; transform: translateY(0); }
+}
+
+.logo{
+    font-size:30px;
+    color:#fff;
+    font-weight:700;
+}
+.logo span{ font-size:25px; }
+
+/* ---------- NAV ---------- */
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+.nav-links a{
+    color:white;
+    font-size:16px;
+    text-decoration:none;
+    transition:0.3s;
+}
+.nav-links a:hover{ opacity:0.7; }
+
+.btn{
+    padding:8px 20px;
+    background:#25c5ff;
+    border:none;
+    border-radius:6px;
+    color:white;
+    cursor:pointer;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+    width:100%;
+    height:100vh;
+    background:url(beach.jpg)
+        center/cover no-repeat;
+    position:relative;
+}
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+}
+
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -40%);
+    width:80%;
+    color:white;
+    opacity:0;
+    animation: heroFade 1.2s ease forwards;
+    animation-delay: 0.5s;
+}
+@keyframes heroFade {
+    0% { opacity:0; transform:translate(-50%, -45%); }
+    100% { opacity:1; transform:translate(-50%, -40%); }
+}
+
+.hero-content h1{
+    font-size:38px;
+    margin-bottom:15px;
+
+    /* Slide left animation */
+    opacity:0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+@keyframes slideLeft {
+    0% { opacity:0; transform:translateX(-40px); }
+    100% { opacity:1; transform:translateX(0); }
+}
+
+.hero-content p{
+    width:60%;
+    line-height:1.6;
+    margin-bottom:25px;
+
+    /* Fade-up */
+    opacity:0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1.4s;
+}
+@keyframes fadeUp {
+    0% { opacity:0; transform:translateY(20px); }
+    100% { opacity:1; transform:translateY(0); }
+}
+
+/* ---------- HAMBURGER ---------- */
+.hamburger{
+    width:30px;
+    height:22px;
+    display:none;
+    flex-direction:column;
+    justify-content:space-between;
+    cursor:pointer;
+}
+.hamburger span{
+    width:100%;
+    height:3px;
+    background:white;
+    border-radius:5px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:850px){
+
+    header{
+        padding:18px 25px;
+    }
+
+    .nav-links{
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 240px;
+        height: 100vh;
+        background: #003a4ca9;
+        backdrop-filter: blur(10px);
+        padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-left: 30px;
+        transition: 0.4s;
+        z-index: 1000;   /* menu layer */
+    }
+
+    .nav-links.nav-active{
+        right: 0;
+    }
+
+    .hamburger{
+        display: flex;
+        position: fixed;
+        top: 22px;
+        right: 25px;
+        z-index: 2001;  /* ABOVE menu */
+    }
+}
+
+

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navee Premium Travel Timeline</title>
+
+<style>
+/* ==========================================================
+                ULTRA PRO MAX PREMIUM UI
+    Apple Style • Glassmorphism • Neon • Motion UI
+   ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at 20% 20%, #ffffff 0%, #f3f3f3 25%, #e4e4e4 50%, #d7d7d7 75%),
+                linear-gradient(145deg, #ececec, #ffffff, #d4d4d4);
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- PREMIUM HEADER ---------------- */
+.welcome-header {
+    width: 100%;
+    text-align: center;
+    padding: 22px 0;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(18px) saturate(180%);
+    font-size: 32px;
+    font-weight: 900;
+    color: #1f1f1f;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+    animation: fadeDown 0.7s ease forwards;
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- PREMIUM TIMELINE GRID ---------------- */
+.timeline {
+    display: grid;
+    grid-template-columns: 1fr 14px 1fr;
+    gap: 50px;
+    padding: 80px 100px;
+    position: relative;
+}
+
+/* Vertical Line */
+.timeline-line {
+    background: linear-gradient(180deg, #cccccc, #fafafa, #cccccc);
+    width: 4px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* Floating Neon Dot */
+.timeline-line .dot {
+    width: 18px;
+    height: 18px;
+    background: #7a3cff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    box-shadow: 
+        0 0 20px #7a3cff,
+        0 0 35px rgba(122,60,255,0.6),
+        inset 0 0 12px rgba(255,255,255,0.9);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    50% { transform: translateX(-50%) scale(1.3); }
+}
+
+/* ---------------- PREMIUM TIMELINE CARDS ---------------- */
+.timeline-box {
+    min-width: 420px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(22px) saturate(200%);
+    padding: 32px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.15),
+        inset 0 0 20px rgba(255,255,255,0.2);
+    transition: all 0.45s ease;
+}
+
+/* LEFT RIGHT ALIGNMENT */
+.timeline-box.left {
+    grid-column: 1;
+    animation: slideLeft 1s ease forwards;
+}
+
+.timeline-box.right {
+    grid-column: 3;
+    animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(-80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Hover FX */
+.timeline-box:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow:
+        0 26px 60px rgba(0,0,0,0.22),
+        inset 0 0 45px rgba(255,255,255,0.4);
+    border-color: rgba(122,60,255,0.35);
+}
+
+/* PREMIUM TEXT */
+.timeline-box h3 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 6px;
+    color: #2b2b2b;
+}
+
+.timeline-box h4 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #7a3cff;
+    font-weight: 600;
+}
+
+.timeline-box ul {
+    padding-left: 20px;
+}
+
+.timeline-box ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* ---------------- RESPONSIVE PREMIUM ---------------- */
+@media (max-width: 768px) {
+    .timeline {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .timeline-line {
+        display: none;
+    }
+
+    .timeline-box {
+        min-width: 100%;
+        grid-column: 1 !important;
+        animation: fadeUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeUp {
+        from { transform: translateY(40px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="welcome-header">
+    Welcome to Navee Travel Website
+</header>
+
+<div class="timeline">
+
+    <!-- DAY 1 -->
+    <div class="timeline-box left">
+        <h3>Day 1</h3>
+        <h4>Cochin to Alleppey Houseboat</h4>
+        <ul>
+            <li>Drive to Alleppey and check in to Houseboat at 12 Noon.</li>
+            <li>1-hour cruise in the morning before checkout.</li>
+            <li>All meals included: lunch, dinner, breakfast.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-line"><span class="dot"></span></div>
+
+    <!-- DAY 2 -->
+    <div class="timeline-box right">
+        <h3>Day 2</h3>
+        <h4>Alleppey to Munnar</h4>
+        <ul>
+            <li>5-hour drive from Alleppey to Munnar.</li>
+            <li>Start early if only one-night stay.</li>
+            <li>Optional: visit Alleppey beach before leaving.</li>
+        </ul>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="timeline-box left">
+        <h3>Day 3</h3>
+        <h4>Munnar</h4>
+        <ul>
+            <li>Visit Eravikulam National Park.</li>
+            <li>Tea Museum, Echo Point, Kundala Lake.</li>
+            <li>Tea Museum closed on Mondays.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-line"><span class="dot"></span></div>
+
+    <!-- DAY 4 -->
+    <div class="timeline-box right">
+        <h3>Day 4</h3>
+        <h4>Munnar to Cochin Drop</h4>
+        <ul>
+            <li>Complimentary Cochin sightseeing.</li>
+            <li>Shopping at Marine Drive.</li>
+            <li>Airport/Railway station drop.</li>
+        </ul>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="timeline-box left">
+        <h3>Day 5</h3>
+        <h4>Extra Day Activity</h4>
+        <ul>
+            <li>Cochin sightseeing.</li>
+            <li>Fort Kochi, Navy Museum, Boat Ride.</li>
+            <li>Evening drop at Airport/Station.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-line"><span class="dot"></span></div>
+
+    <!-- DAY 6 -->
+    <div class="timeline-box right">
+        <h3>Day 6</h3>
+        <h4>Optional Activities</h4>
+        <ul>
+            <li>Shopping & leisure time.</li>
+            <li>Boat ride or city tour.</li>
+        </ul>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="timeline-box left">
+        <h3>Day 7</h3>
+        <h4>Munnar to Cochin Drop</h4>
+        <ul>
+            <li>Cochin sightseeing based on time.</li>
+            <li>Shopping experience.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-line"><span class="dot"></span></div>
+
+    <!-- DAY 8 -->
+    <div class="timeline-box right">
+        <h3>Day 8</h3>
+        <h4>Final Checkout</h4>
+        <ul>
+            <li>Final day checkout.</li>
+            <li>Farewell Cochin drop.</li>
+            <li>Trip concludes with sweet memories.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

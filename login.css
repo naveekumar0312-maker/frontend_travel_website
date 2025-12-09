@@ -1,0 +1,104 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg,#4facfe,#00f2fe);
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      width: 380px;
+      padding: 35px 30px;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+      animation: fadeIn 0.9s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    label {
+      font-weight: 500;
+      color: #333;
+      font-size: 15px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 6px 0 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #4facfe;
+      box-shadow: 0 0 7px rgba(79, 172, 254, 0.4);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background: #0c8af5;
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .form-footer a {
+      color: #4facfe;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* --- MOBILE RESPONSIVE --- */
+    @media (max-width: 480px) {
+      .container {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }

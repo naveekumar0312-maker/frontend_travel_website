@@ -1,0 +1,277 @@
+/* ---------- TOUR SECTION WRAPPER ---------- */
+#Our\ Tour\ Packages {
+    padding: 30px 0;
+}
+
+/* ---------- CARDS ROW ---------- */
+.cards-row {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* ---------- CARD ---------- */
+.tour-card {
+    width: 310px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ---------- IMAGE BLOCK ---------- */
+.tour-img {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+}
+
+.tour-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- DAY BADGE ---------- */
+.day-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #ffe601;
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* ---------- CARD BODY ---------- */
+.tour-body {
+    padding: 18px;
+    text-align: center;
+}
+
+.tour-body .days {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.pkg-name {
+    margin-top: 3px;
+    font-size: 15px;
+    color: #6d6d6d;
+    margin-bottom: 8px;
+}
+
+.tour-body hr {
+    width: 70%;
+    margin: 10px auto;
+    border: none;
+    border-top: 1px solid #e3e3e3;
+}
+
+/* ---------- LOCATION LINE ---------- */
+.loc {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* ---------- VIEW DETAILS LINK ---------- */
+.view-details {
+    color: #5a2ca7;
+    font-size: 14px;
+    margin-top: 6px;
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ---------- ICON ROW ---------- */
+.icon-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.icon-row div {
+    text-align: center;
+    width: 25%;
+}
+
+.icon-row span.material-symbols-outlined {
+    font-size: 28px;
+    color: #5a2ca7;
+    margin-bottom: 4px;
+}
+
+.icon-row p {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* ======================================================
+   RESPONSIVE MEDIA QUERIES FOR TOUR PACKAGE CARDS
+   ====================================================== */
+
+/* ---------- LARGE DEVICES (1400px – desktops) ---------- */
+@media (max-width: 1400px) {
+    .cards-row {
+        gap: 20px;
+    }
+    .tour-card {
+        width: 300px;
+    }
+}
+
+/* ---------- MEDIUM DEVICES (1200px) ---------- */
+@media (max-width: 1200px) {
+    .tour-card {
+        width: 280px;
+    }
+    .tour-img {
+        height: 170px;
+    }
+}
+
+/* ---------- TABLET LANDSCAPE (992px) ---------- */
+@media (max-width: 992px) {
+    .cards-row {
+        gap: 18px;
+    }
+    .tour-card {
+        width: 45%;
+    }
+    .tour-img {
+        height: 180px;
+    }
+    .icon-row span {
+        font-size: 26px;
+    }
+}
+
+/* ---------- TABLET PORTRAIT (768px) ---------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 26px !important;
+    }
+
+    .tour-card {
+        width: 90%;
+        margin: auto;
+    }
+
+    .tour-img {
+        height: 160px;
+    }
+
+    .tour-body .days {
+        font-size: 16px;
+    }
+
+    .pkg-name {
+        font-size: 14px;
+    }
+
+    .loc {
+        font-size: 13px;
+    }
+}
+
+/* ---------- MOBILE (600px) ---------- */
+@media (max-width: 600px) {
+    #Our\ Tour\ Packages h1 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .cards-row {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .tour-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .tour-img {
+        height: 150px;
+    }
+
+    .icon-row {
+        gap: 10px;
+    }
+
+    .icon-row div p {
+        font-size: 11px;
+    }
+
+    .icon-row span.material-symbols-outlined {
+        font-size: 24px;
+    }
+}
+
+/* ---------- SMALL MOBILE (450px) ---------- */
+@media (max-width: 450px) {
+
+    .tour-body {
+        padding: 14px;
+    }
+
+    .tour-img {
+        height: 140px;
+    }
+
+    .tour-body .days {
+        font-size: 15px;
+    }
+
+    .pkg-name {
+        font-size: 13px;
+    }
+
+    .loc {
+        font-size: 12px;
+    }
+
+    .view-details {
+        font-size: 13px;
+    }
+
+    .icon-row {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+}
+
+/* ---------- VERY SMALL DEVICES (360px) ---------- */
+@media (max-width: 360px) {
+
+    .tour-card {
+        width: 100%;
+    }
+
+    .tour-img {
+        height: 130px;
+    }
+
+    .icon-row span {
+        font-size: 22px;
+    }
+
+    .icon-row div p {
+        font-size: 10px;
+    }
+}
+
