@@ -24,10 +24,19 @@
     <div class="logo">Navee Tours</div>
 
     <nav class="nav-links" id="navLinks">
-        <a href="#About Us">About Us</a>
-        <a href="#Our Tour Packages">Package</a>
-        <a class="btn" href="login.html">Log in</a>
-    </nav>
+  <a href="#about">About Us</a>
+  <a href="#packages">Package</a>
+
+  <!-- login button -->
+  <a class="btn" id="loginBtn" href="login.html">Log in</a>
+
+  <!-- username -->
+  <span id="userName" style="display:none; font-weight:bold;"></span>
+
+  <!-- logout -->
+  <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+</nav>
+
 
     <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -713,4 +722,25 @@ Whether you're dreaming of a peaceful hill escape, a romantic beachside holiday,
 <script src="call.js"></script>
 <script src="contact.js"></script>
 <script src="contact2.js"></script>
+<script>
+const user = localStorage.getItem("loggedUser");
+
+const loginBtn = document.getElementById("loginBtn");
+const userName = document.getElementById("userName");
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (user) {
+  loginBtn.style.display = "none";
+  userName.style.display = "inline";
+  logoutBtn.style.display = "inline";
+
+  userName.innerText = "Hi, " + user;
+}
+
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("loggedUser");
+  window.location.reload();
+});
+</script>
+
 </html>
