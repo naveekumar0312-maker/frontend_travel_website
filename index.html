@@ -723,24 +723,27 @@ Whether you're dreaming of a peaceful hill escape, a romantic beachside holiday,
 <script src="contact.js"></script>
 <script src="contact2.js"></script>
 <script>
-const user = localStorage.getItem("loggedUser");
+document.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("loggedUser");
 
-const loginBtn = document.getElementById("loginBtn");
-const userName = document.getElementById("userName");
-const logoutBtn = document.getElementById("logoutBtn");
+  const loginBtn = document.getElementById("loginBtn");
+  const userName = document.getElementById("userName");
+  const logoutBtn = document.getElementById("logoutBtn");
 
-if (user) {
-  loginBtn.style.display = "none";
-  userName.style.display = "inline";
-  logoutBtn.style.display = "inline";
+  if (user) {
+    loginBtn.style.display = "none";
+    userName.style.display = "inline";
+    logoutBtn.style.display = "inline";
 
-  userName.innerText = "Hi, " + user;
-}
+    userName.innerText = "Hi, " + user;
+  }
 
-logoutBtn.addEventListener("click", () => {
-  localStorage.removeItem("loggedUser");
-  window.location.reload();
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("loggedUser");
+    window.location.reload();
+  });
 });
 </script>
+
 
 </html>
