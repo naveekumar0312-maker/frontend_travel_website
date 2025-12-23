@@ -43,20 +43,20 @@
     }
   });
 
-  function login() {
-  const username = document.getElementById("username").value;
+  document.getElementById("loginBtn").addEventListener("click", function () {
+  const username = document.getElementById("username").value.trim();
 
-  if (username.trim() === "") {
-    alert("Username enter pannu da");
+  if (username === "") {
+    alert("Username podu machi");
     return;
   }
 
-  // save username
+  // ✅ SAME KEY NAME
   localStorage.setItem("loggedUser", username);
 
-  // redirect to home
+  // redirect
   window.location.href = "index.html";
-}
+});
 </script>
 
 </html>
